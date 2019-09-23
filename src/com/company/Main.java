@@ -14,17 +14,26 @@ import java.awt.*;
 //Написать метод в классе 3-го уровня который бы копировал некоторые свойства из себеподобного объекта
 //Затем скопировать несколько свойств из objectB в objectC и распечатать информацию по objectC
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
 
     Car car = new Car() ;
     car.characteristicsCar(2014, "BMW");
     car.characteristicsCar(2013, "MERS", 45544);
     car.characteristicsCar(2013, "MERS", 14522, Color.BLACK);
-    SportCar sp1 = new SportCar() ;
+    SportCar sp1 = new SportCar("Subaru",2015,"Forester",45544) ;
+    SportCar clone = (SportCar) sp1.clone();
+    System.out.println(sp1);
+    System.out.println(clone);
+    System.out.println(clone);
     sp1.characteristicsCar(2015, "Honda");
     sp1.characteristicsCar(2016, "Toyota", 50546);
     sp1.characteristicsCar(2016, "Toyota", 50546, Color.WHITE);
-    SportCar sp2 = new SportCar() ;
+    SportCar sp2 = new SportCar("Mustang",2016,"Ford",45363) ;
+    SportCar clone2 = (SportCar) sp2.clone();
+    System.out.println(sp1);
+    System.out.println(clone2);
+    clone.car.characteristicsCar(2015,"AUDI");
+    System.out.println(clone);
     sp2.characteristicsCar(2017, "KIA" );
     sp2.characteristicsCar(2018, "AUDI", 35412);
     sp2.characteristicsCar(2018, "AUDI", 35412, Color.GREEN);
